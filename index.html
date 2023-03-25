@@ -6,7 +6,35 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
+  
+<?php
+$hostname = "leonardowaos.mysql.database.azure.com";
+$username = "leonardoadmin";
+$password = "@Orellana123";
+$ssl_mode = "require";
 
+// Establecer la conexión
+$conexion = mysqli_connect($hostname, $username, $password, "", 3306, "/var/www/html/mysql/mysql.sock", $ssl_mode);
+
+// Verificar la conexión
+if (!$conexion) {
+    die("La conexión ha fallado: " . mysqli_connect_error());
+}
+echo "Conexión exitosa!";
+
+// Ejecutar una consulta SQL
+$query = "SELECT * FROM mi_tabla";
+$resultado = mysqli_query($conexion, $query);
+
+// Recuperar los datos de la consulta
+while ($fila = mysqli_fetch_array($resultado)) {
+    echo $fila['nombre'] . " " . $fila['apellido'] . "<br>";
+}
+
+// Cerrar la conexión
+mysqli_close($conexion);
+?>
+  
   <!-- iconos -->
   <link href="img/favicon.png" rel="icon">
 
