@@ -1,0 +1,2 @@
+# WebStatico
+Repositorio insano 
