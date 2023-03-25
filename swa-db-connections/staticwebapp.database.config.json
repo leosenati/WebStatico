@@ -1,0 +1,15 @@
+{
+  "database": {
+    "providerName": "mysql",
+    "configuration": {
+      "server": "leonardowaos.mysql.database.azure.com",
+      "database": "leonardowaos",
+      "user": "leonardoadmin",
+      "password": "@Orellana123",
+      "options": {
+        "encrypt": true,
+        "trustServerCertificate": false
+      }
+    }
+  }
+}
